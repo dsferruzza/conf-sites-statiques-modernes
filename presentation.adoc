@@ -1,0 +1,76 @@
+= Title Slide!
+Doc Writer <doc.writer@asciidoctor.org>
+:imagesdir: img
+
+== Text & List
+
+This is _some_ *example* `text`!
+
+* Foo
+* Bar
+* World
+
+== Blockquote & Notes
+
+A Great Story
+
+> fzegij zeiofj z ezoig jrziog jrzoi fieazjriozg jiezjf aiz
+
+[.notes]
+--
+* tell anecdote
+* make a point
+--
+
+== Code
+
+[.smallcode]
+[source, nix]
+----
+{ stdenv, fetchurl }:
+
+stdenv.mkDerivation rec {
+  name = "which-2.21";
+
+  src = fetchurl {
+    url = "mirror://gnu/which/${name}.tar.gz";
+    sha256 = "1bgafvy3ypbhhfznwjv1lxmd6mci3x1byilnnkc7gcr486wlb8pl";
+  };
+
+  meta = with stdenv.lib; {
+    homepage = http://ftp.gnu.org/gnu/which/;
+    platforms = platforms.all;
+    license = licenses.gpl3;
+  };
+}
+----
+
+== Titre accentué !
+=== Subtitle
+==== Subsubtitle
+
+== Admonitions
+
+NOTE: Side node
+
+TIP: Pro tip
+
+IMPORTANT: This is important
+
+CAUTION: Be careful
+
+WARNING: This is a warning
+
+== Big Admonitions
+
+[IMPORTANT]
+.Feeding the Werewolves
+====
+While werewolves are hardy community members, keep in mind the following dietary concerns:
+
+. They are allergic to cinnamon.
+. More than two glasses of orange juice in 24 hours makes them howl in harmony with alarms and sirens.
+. Celery makes them sad.
+====
+
+include::include.adoc[]

@@ -1,0 +1,24 @@
+build:
+  stage: build
+  image: node:12
+  script:
+    - ./buildDocuments.sh
+    - node build.js build
+  artifacts:
+    paths:
+      - ./*.html
+  tags:
+    - docker
+
+pages:
+  stage: deploy
+  script:
+    - mkdir public/
+    - cp -r ./{css,fonts,js,lib,plugin,*.html} public/
+  artifacts:
+    paths:
+      - public/
+  tags:
+    - docker
+  only:
+    - master

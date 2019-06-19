@@ -1,3 +1,0 @@
-== Slide
-
-This slide is from a different file

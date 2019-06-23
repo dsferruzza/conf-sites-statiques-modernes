@@ -1,3 +1,50 @@
 = Outils pour sites statiques modernes à l'intention du développeur paresseux
 David Sferruzza <david.sferruzza@gmail.com>
 :imagesdir: img
+
+== Bonjour à tous !
+
+Je m'appelle *David*, je *développe* des sites web (depuis une quinzaine d'années) et je suis *paresseux* ([.line-through]#depuis toujours#).
+
+== Des _sites web_ ?
+
+La terminologie est variée :
+
+* site web
+* application web
+* services web
+* site Internet
+
+---
+
+NOTE: Il n'y a pas de définitions formelles, c'est parti pour les _abus de langage_ !
+
+== Le principe du site web
+
+On a un *logiciel* qui s'exécute sur un *serveur* pour délivrer du *contenu* grâce au *protocole HTTP* d'un bout à l'autre du *réseau Internet*.
+
+Les *navigateurs* web permettent d'appeler ces contenus, de les *interpréter* et de les *afficher*.
+
+== Sites web : deux familles, deux ambiances
+
+== 1/ Sites statiques
+
+On utilise un logiciel de serveur web *standard* (Apache, nginx, ...) qui va servir du contenu *inerte*.
+
+_Le contenu a été écrit préalablement._
+
+== 2/ Sites dynamiques
+
+On *développe* une application qui va recevoir chaque requête HTTP et *générer* une réponse potentiellement *personnalisée*.
+
+== 2/ Sites dynamiques
+
+👍 *Avantages* 👍
+
+* flexibilité
+* outillage
+
+👎 *Inconvénients* 👎
+
+* performances
+* surface d'attaque

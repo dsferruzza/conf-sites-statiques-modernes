@@ -37,14 +37,97 @@ _Le contenu a été écrit préalablement._
 
 On *développe* une application qui va recevoir chaque requête HTTP et *générer* une réponse potentiellement *personnalisée*.
 
-== 2/ Sites dynamiques
+== Dynamisme 🤘
 
-👍 *Avantages* 👍
+Le principe des sites dynamiques est beaucoup plus *puissant* !
 
-* flexibilité
-* outillage
+* on peut faire *pareil ou plus* que les sites statiques
+* on peut implémenter des comportements *arbitraires*
 
-👎 *Inconvénients* 👎
+== Dynamisme 😬
 
+Sauf que tout ça a un coût en :
+
+* complexité du système
+* intégrité des données
+* étendue de la surface d'attaque
 * performances
-* surface d'attaque
+* résilience face à la variabilité de l'écosystème
+
+== Dynamisme 😇
+
+Heureusement, on peut affronter ces problèmes grâce à :
+
+* la recherche scientifique
+* des innovations industrielles
+* des professionnels du logiciel
+* des outils libres
+
+== Content Management System
+
+Un CMS est un site dynamique *pré-développé* pour gérer du contenu _sans avoir besoin de connaissances techniques_.
+
+> Exemples : WordPress, Joomla!, PrestaShop, ...
+
+Quelques éléments de différentiation :
+
+* hypothèses sur le contenu
+* interface d'édition du contenu
+* extensibilité
+* écosystème (thèmes, _add-ons_)
+
+== CVE liées à WordPress 😬
+
+[.stretch]
+[link=https://nvd.nist.gov/vuln/search/statistics?form_type=Advanced&results_type=statistics&query=wordpress&search_type=all]
+image::wordpress-cve.png[CVE liées à WordPress]
+
+== Prenons du recul
+
+== Tout est compromis
+
+En général, quand on fait un site web, le problème n'est pas de trouver une solution qui marche mais *d'évaluer les risques/opportunités* des solutions qui marchent pour choisir la meilleure.
+
+== En réalité
+
+C'est vraiment très difficile.
+Il y a énormément de paramètres.
+
+*→ On choisit souvent à l'instinct 😅*
+
+== _Plot twist_ 😱
+
+Limitations :
+
+* les biais cognitifs
+* les évolution de l'écosystème
+* les connaissances imparfaites
+
+*→ N'arrêtez jamais d'apprendre 🙏*
+
+== Sites dynamiques
+
+Parfois, c'est cool de faire un site dynamique :
+
+* les cas d'usage l'imposent
+* accès à des abstractions
+* ...
+
+Parfois, c'est cool d'utiliser un CMS :
+
+* pas besoin de réinventer la roue
+* on a l'habitude
+* ...
+
+== Le projet du jour
+
+Parfois, on veut un site :
+
+* au contenu gérable par des *non-développeurs*
+* pour délivrer du contenu (*peu d'interactions*)
+* au rendu *spécifique et performant*
+* *facile à maintenir* sur le long terme
+
+== Bienvenue dans ma conférence !
+
+> Avec les bonnes techniques, on peut satisfaire ces contraintes avec un site statique !

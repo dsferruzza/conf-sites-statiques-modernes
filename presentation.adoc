@@ -49,6 +49,7 @@ Le principe des sites dynamiques est beaucoup plus *puissant* !
 Sauf que tout ça a un coût en :
 
 * complexité du système
+* dépendances à d'autres logiciels
 * intégrité des données
 * étendue de la surface d'attaque
 * performances
@@ -67,7 +68,7 @@ Heureusement, on peut affronter ces problèmes grâce à :
 
 Un CMS est un site dynamique *pré-développé* pour gérer du contenu _sans avoir besoin de connaissances techniques_.
 
-> Exemples : WordPress, Joomla!, PrestaShop, ...
+> Exemples : WordPress, Drupal, Joomla!, PrestaShop, ...
 
 Quelques éléments de différentiation :
 
@@ -116,6 +117,7 @@ Parfois, c'est cool de faire un site dynamique :
 Parfois, c'est cool d'utiliser un CMS :
 
 * pas besoin de réinventer la roue
+* pas besoin de développeur
 * on a l'habitude
 * ...
 
@@ -133,3 +135,123 @@ Parfois, on veut un site :
 == Bienvenue dans ma conférence !
 
 > Avec les bonnes techniques, on peut satisfaire ces contraintes avec un site statique !
+
+== Approche naïve
+
+On édite et déploie manuellement des fichiers HTML, CSS, JS, ...
+
+_On utilise Git pour versionner tout ça_ 🙏
+
+* ❌ travail répétitif, pas d'abstractions/d'outils
+* ❌ déploiement sujet à erreurs humaines
+
+== Générateur de sites statiques
+
+On ajoute une étape de construction pour séparer :
+
+* ce que le développeur écrit
+* le produit fini (un site statique)
+
+Ça permet d'utiliser des *abstractions* et des fonctionnalités pré-développées.
+
+* langage de gabarit (_templating_)
+* pagination
+* blog (et flux RSS)
+* ...
+
+== Choisir un générateur
+
+Il en existe *plein*. Quelques critères :
+
+* usage principal, fonctionnalités
+* format d'entrée
+* extensibilité (⇒ langage utilisé)
+* écosystème (modules, documentation, ...)
+* facilité d'installation
+
+> Exemples : Jekyll, Hugo, Gatsby, ...
+
+== Avec un générateur
+
+Une fois la techno choisie et maîtrisée, le développement du site est plus rapide et sa maintenance bien plus facile !
+
+_Comme a on déjà payé le prix d'avoir une étape de construction, on peut l'exploiter encore plus (webpack, ...)._
+
+* ✅ travail répétitif, pas d'abstractions/d'outils
+* ❌ déploiement sujet à erreurs humaines
+
+== Intégration continue
+
+> Un système lance des tâches à chaque fois qu'une nouvelle version du code est publiée.
+
+* *générer* (produire des artéfacts)
+* *vérifier* (éviter le _"ça marche sur ma machine"_, lancer les tests automatisés)
+* *déployer*
+
+TIP: Pour un site statique, on veut surtout générer le site et le déployer.
+
+== GitLab CI
+
+C'est le système d'intégration continue lié à GitLab. Il est top 👌
+
+[source.smallcode, yaml]
+----
+variables:
+  DEBIAN_FRONTEND: noninteractive
+  NODE_VERSION: 12
+
+build:
+  stage: build
+  image: ruby:2.6-stretch
+  script:
+    - curl -sL https://deb.nodesource.com/setup_$NODE_VERSION.x | bash -
+    - apt-get install -y nodejs
+    - npm install
+    - npm run build
+    - bundle install
+    - bundle exec jekyll build
+  artifacts:
+    paths:
+      - _site/
+  tags:
+    - docker
+----
+
+== Avec un générateur + CI
+
+* ✅ travail répétitif, pas d'abstractions/d'outils
+* ✅ déploiement sujet à erreurs humaines
+* ✅ *facile à maintenir* sur le long terme
+* ❌ contenu gérable par des *non-développeurs*
+
+== Gestion du contenu
+
+Dans la plupart des générateurs, le contenu est à écrire en *Markdown* et il faut savoir manipuler *Git*.
+
+*→ C'est un frein pour les non-développeurs 🤢*
+
+Heureusement, il existe des services d'interface graphique d'édition :
+
+1. On configure le _schéma_ des données
+2. On saisit les contenus via une interface graphique
+3. À chaque génération du site, on récupère les contenus via une API
+
+== Contentful
+
+[.stretch]
+[link=https://www.contentful.com/]
+image::contentful.png[]
+
+== Contentful : schéma
+
+[.stretch]
+image::schema.png[]
+
+== Contentful : édition
+
+[.stretch]
+image::data.png[]
+
+== NetlifyCMS
+
+== Naddymess

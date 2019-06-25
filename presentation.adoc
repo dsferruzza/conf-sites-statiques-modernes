@@ -119,6 +119,8 @@ Parfois, c'est cool d'utiliser un CMS :
 * on a l'habitude
 * ...
 
+_Aujourd'hui on va parler des autres cas_ 😄
+
 == Le projet du jour
 
 Parfois, on veut un site :

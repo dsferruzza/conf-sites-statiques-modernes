@@ -53,7 +53,7 @@ Sauf que tout ça a un coût en :
 * intégrité des données
 * étendue de la surface d'attaque
 * performances
-* résilience face à la variabilité de l'écosystème
+* ...
 
 == Dynamisme 😇
 
@@ -232,7 +232,7 @@ Dans la plupart des générateurs, le contenu est à écrire en *Markdown* et il
 
 == Gestion du contenu
 
-Heureusement, il existe des services d'interface graphique d'édition :
+Heureusement, il existe des *services* d'interface graphique d'édition :
 
 . On configure le _schéma_ des données
 . On saisit les contenus via une interface graphique

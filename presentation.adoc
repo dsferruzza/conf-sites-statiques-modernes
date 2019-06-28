@@ -175,7 +175,7 @@ Il en existe *plein*. Quelques critères :
 
 Une fois la techno choisie et maîtrisée, le développement du site est plus rapide et sa maintenance bien plus facile !
 
-_Comme a on déjà payé le prix d'avoir une étape de construction, on peut l'exploiter encore plus (webpack, ...)._
+_Comme on a déjà payé le prix d'avoir une étape de construction, on peut l'exploiter encore plus (webpack, ...)._
 
 * ✅ travail répétitif, pas d'abstractions/d'outils
 * ❌ déploiement sujet à erreurs humaines

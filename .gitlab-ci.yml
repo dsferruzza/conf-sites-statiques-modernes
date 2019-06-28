@@ -14,7 +14,7 @@ pages:
   stage: deploy
   script:
     - mkdir public/
-    - cp -r ./{css,fonts,js,lib,plugin,*.html} public/
+    - cp -r ./{css,fonts,js,lib,plugin,*.html,img} public/
   artifacts:
     paths:
       - public/
